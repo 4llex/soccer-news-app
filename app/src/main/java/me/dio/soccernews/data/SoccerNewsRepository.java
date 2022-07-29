@@ -12,6 +12,7 @@ public class SoccerNewsRepository {
 
     //region Constantes
     private static final String REMOTE_API_URL = "https://digitalinnovationone.github.io/soccer-news-api/";
+    private static final String MY_REMOTE_API_URL = "https://4llex.github.io/soccer-news-api/";
     private static final String LOCAL_DB_NAME = "soccer-news";
     //endregion
 
@@ -31,7 +32,7 @@ public class SoccerNewsRepository {
     //region Singleton: garante uma instância única dos atributos relacionados ao Retrofit e Room.
     private SoccerNewsRepository () {
         remoteApi = new Retrofit.Builder()
-                .baseUrl(REMOTE_API_URL)
+                .baseUrl(MY_REMOTE_API_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(SoccerNewsApi.class);
